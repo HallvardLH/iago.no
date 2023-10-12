@@ -1,117 +1,90 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import DataDisplay from '../components/DataDisplay';
+import SectionTitle from '@/components/SectionTitle';
+import SectionDescription from '@/components/SectionDescription';
+import ContentCard from '@/components/contentCard/ContentCard';
+import ContentCardSection from '@/components/contentCard/ContentCardSection';
+import {Accordion, AccordionItem} from "@nextui-org/accordion";
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex min-h-[calc(100vh-6rem)] flex-col items-center justify-between p-standard">
+      <div className="w-full gap-48 flex flex-col items-center">
+        <div>
+          <SectionTitle title="Våre resultater i tall"/>
+          <DataDisplay 
+            dataSets={[
+              {
+                number: '100',
+                suffix: '%',
+                label: 'Kundetilfredshet'
+              },
+              {
+                number: '120',
+                suffix: 'K+',
+                label: 'Nedlastinger'
+              },
+              {
+                number: '10',
+                suffix: 'K+',
+                label: 'Registrerte brukere'
+              },
+              {
+                number: '24',
+                suffix: '/7',
+                label: 'Oppetid'
+              },
+          ]}
+          />
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="flex flex-col">
+          <SectionTitle className="mb-2" title="Hvorfor velge oss?"/>
+          <SectionDescription text="Med vår dype tekniske innsikt og lidenskap for innovasjon, er vi dedikert til å forme din digitale fremtid og styrke din forretningsvekst." />
+          <ContentCardSection>
+            <ContentCard
+              icon="visibility"
+              title="Økt Synlighet" 
+              text="Med en profesjonell nettside eller app, vil din bedrift bli mer synlig online, tiltrekke seg flere kunder og styrke merkevaren."
+            />
+            <ContentCard
+              icon="campaign"
+              title="Kostnadseffektiv Markedsføring" 
+              text="En godt designet nettside eller app er en av de mest kostnadseffektive markedsføringsverktøyene, som gir høy avkastning på investeringen."
+            />
+            <ContentCard
+              icon="event_available"
+              title="Tilgjengelig 24/7" 
+              text="Din nettside eller app er alltid tilgjengelig, slik at kundene kan nå deg når som helst, dag eller natt."
+            />
+            <ContentCard
+              icon="query_stats"
+              title="Skalerbar Vekst" 
+              text="Våre løsninger er bygget med tanke på fremtiden, slik at du enkelt kan skalere opp eller tilpasse etter hvert som din bedrift vokser."
+            />
+            <ContentCard
+              icon="sentiment_very_satisfied"
+              title="Forbedret Kundetilfredshet" 
+              text="Med en intuitiv og brukervennlig plattform, vil kundene dine ha en positiv interaksjon med merkevaren din, noe som fører til økt lojalitet."
+            />
+            <ContentCard
+              icon="workspace_premium"
+              title="Konkurransedyktig Fordel" 
+              text="Stå ut i markedet med en unik nettpresens som setter deg foran konkurrentene."
+            />
+          </ContentCardSection>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <Accordion>
+            <AccordionItem key="1" aria-label="Hvorfor er Iago det beste valget for web- og apputvikling?" title="Hvorfor er Iago det beste valget for web- og apputvikling?">
+              Med vår dype tekniske kunnskap og forståelse for moderne trender, leverer Iago løsninger som ikke bare møter, men overgår kundens forventninger. Vårt team er dedikert til kontinuerlig læring og innovasjon.
+            </AccordionItem>
+            <AccordionItem key="2" aria-label="Hvordan skiller Iago seg fra andre IT-konsulentfirmaer?" title="Hvordan skiller Iago seg fra andre IT-konsulentfirmaer?">
+              Empty
+            </AccordionItem>
+            <AccordionItem key="3" aria-label="Hvordan kan Iago hjelpe min bedrift med å vokse digitalt?" title="Hvordan kan Iago hjelpe min bedrift med å vokse digitalt?">
+              Empty
+            </AccordionItem>
+          </Accordion>
+        </div>
       </div>
     </main>
   )
