@@ -1,0 +1,22 @@
+.customBulletUl {
+    list-style-type: none; /* hide default bullet points */
+    padding-left: 0;
+}
+
+.customBulletUl > li {
+    position: relative;
+    padding-left: 30px; /* provide some space for the icon */
+}
+
+.customBulletUl > li::before {
+    content: ''; /* this is necessary for the pseudo element to work */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* vertically center the icon */
+    width: 20px;
+    height: 20px;
+    background-image: url('/check-standard.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

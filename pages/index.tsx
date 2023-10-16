@@ -5,6 +5,7 @@ import ContentCard from '@/components/contentCard/ContentCard';
 import ContentCardSection from '@/components/contentCard/ContentCardSection';
 import {Accordion, AccordionItem} from "@nextui-org/accordion";
 import SplitSection from '@/components/SplitSection';
+import DealCard from '@/components/dealCard/DealCard';
 
 export default function Home() {
   return (
@@ -145,6 +146,21 @@ export default function Home() {
             Empty
           </AccordionItem>
         </Accordion>
+
+        <div>
+          <DealCard 
+            price="8000 NOK"
+            title="Malbasert"
+            description="Enkel og effektiv nettløsning basert på profesjonelle maler."
+            bulletPoints={[
+              "Rask Oppsett",
+              "Mobiloptimalisert Desgin",
+              "Søkemotorvennlig",
+              "Integrert Innholdsstyring"
+            ]}
+            columns={2}
+          />
+        </div>
       </div>
     </main>
   )
