@@ -1,14 +1,14 @@
-.customBulletUl {
+.customBulletUl, .customBulletUlPremium {
     list-style-type: none; /* hide default bullet points */
     padding-left: 0;
 }
 
-.customBulletUl > li {
+.customBulletUl > li, .customBulletUlPremium > li {
     position: relative;
     padding-left: 30px; /* provide some space for the icon */
 }
 
-.customBulletUl > li::before {
+.customBulletUl > li::before, .customBulletUlPremium > li::before {
     content: ''; /* this is necessary for the pseudo element to work */
     position: absolute;
     left: 0;
@@ -20,3 +20,8 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.customBulletUlPremium > li::before {
+    background-image: url('/check-premium.svg');
+}
+

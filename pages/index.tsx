@@ -147,8 +147,9 @@ export default function Home() {
           </AccordionItem>
         </Accordion>
 
-        <div>
+        <div className="flex flex-row gap-12">
           <DealCard 
+            icon="template"
             price="8000 NOK"
             title="Malbasert"
             description="Enkel og effektiv nettløsning basert på profesjonelle maler."
@@ -158,7 +159,24 @@ export default function Home() {
               "Søkemotorvennlig",
               "Integrert Innholdsstyring"
             ]}
-            columns={2}
+          />
+          <DealCard
+            icon="tailored"
+            price="13000 NOK"
+            title="Skreddersydd"
+            cardType="premium"
+            description="Unik nettløsning designet spesifikt for din bedrifts behov."
+            bulletPoints={[
+              "Tilpasset Webdesign",
+              "Avansert Funksjonalitet",
+              "Responsivt design",
+              "SEO-Optimalisert Struktur",
+              "Integrerte Analyseverktøy",
+              "Ubegrenset Sideskapelse",
+              "Flerspråklig Støtte",
+              "Dedikert Support & Vedlikehold"
+            ]}
+            columns="columns-2"
           />
         </div>
       </div>
