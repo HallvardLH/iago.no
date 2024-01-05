@@ -6,6 +6,8 @@ import ContentCardSection from '@/components/contentCard/ContentCardSection';
 import {Accordion, AccordionItem} from "@nextui-org/accordion";
 import SplitSection from '@/components/SplitSection';
 import DealCard from '@/components/dealCard/DealCard';
+import BorderlessButton from '@/components/BorderlessButton';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -179,6 +181,57 @@ export default function Home() {
             columns="columns-2"
           />
         </div>
+
+        <SplitSection
+          left={(
+            <div>
+              <SectionDescription className="!text-left mb-4" text="Med en teknologistabel som inkluderer Next.js og React Native, leverer vi robuste og moderne digitale løsninger skreddersydd for dine behov." />
+              <BorderlessButton label="Lær mer" />
+            </div>
+          )}
+          // leftWidth="70%"
+          right={(
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Image
+                src="/nextjs.png"
+                alt="Next.js logo"
+                width={132}
+                height={40}
+              />
+              <Image
+                src="/react.png"
+                alt="React.js logo"
+                width={132}
+                height={40}
+              />
+              <Image
+                src="/firebase.png"
+                alt="Firebase logo"
+                width={132}
+                height={40}
+              />
+              <Image
+                src="/tailwind.png"
+                alt="Tailwind.css Logo"
+                width={132}
+                height={40}
+              />
+              <Image
+                src="/typescript.png"
+                alt="Typescript Logo"
+                width={132}
+                height={40}
+              />
+              <Image
+                src="/vercel.png"
+                alt="Vercel Logo"
+                width={132}
+                height={40}
+              />
+            </div>
+          )}
+          // rightWidth="30%"
+        />
       </div>
     </main>
   )
